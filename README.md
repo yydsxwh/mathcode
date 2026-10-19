@@ -1,3 +1,13 @@
-# mathcode
+# MathCode
 
-识图转 LaTeX 在主站仓库 Andyyyds 的 `packages/mathcode`，和主站同一个进程。本仓库还没有可运行的服务。AI 调用今天走主站里的配置；Platform 的 AI 模块已经存在，但生产还没把流量切过去。主站停止时 MathCode 一起停止。
+本草稿已按当前主站 3686fed59ecbc650157d096733db98954f418a06 重做，具有单独 Next.js 进程、产品路由、健康接口与数据库配置。身份通过 Account OIDC；不提供本地密码登录或演示种子。
+
+独立进程端口 4213 只是候选值，上线前核对监听。入口 /products/mathcode。
+
+npm install
+npm run typecheck
+npm test
+npm run test:host
+npm run build
+
+生产切流前必须完成 docs/SPLIT-READINESS.md 的数据、身份和公共能力验收。本 PR 保持草稿，不表示已经部署。
