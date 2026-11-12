@@ -5,7 +5,7 @@
   "files": [
     {
       "path": "AGENTS.md",
-      "sha256": "63f2c50380ed6303237cce215ce27af1d620d094c215e28d1b1538a3c070e3bb"
+      "sha256": "7db85c133cf6a96fcb2d651df0385a80c200f2b9d2ce09efff463efb536501dd"
     },
     {
       "path": "packages/courses/lib/course-bundle.ts",
