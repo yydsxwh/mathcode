@@ -24,6 +24,9 @@ type Channels = {
   wechat: boolean;
   alipay: boolean;
   mockOnly: boolean;
+  closed?: boolean;
+  unavailable?: boolean;
+  invalid?: boolean;
 };
 
 type Props = {
@@ -315,6 +318,15 @@ export function MathcodeWechatPay({ orderId, amount, channels, onPaid }: Props) 
     return () => stopPolling();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [orderId]);
+
+  if (!channels.wechat && !channels.alipay && !channels.mockOnly) {
+    const text = channels.invalid
+      ? "指定支付账户无效，没有改用其他商户。"
+      : channels.unavailable
+        ? "支付暂时不可用，请稍后再试。"
+        : "识图暂停收款。已购页数不受影响。";
+    return <p className="text-sm text-[var(--muted)]">{text}</p>;
+  }
 
   if (channels.mockOnly) {
     return (

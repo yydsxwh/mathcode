@@ -26,7 +26,7 @@ const postSchema = z.object({
 export async function GET() {
   const [session, channels] = await Promise.all([
     getSession(),
-    getPaymentChannels(),
+    getPaymentChannels("mathcode"),
   ]);
   try {
     await ensureMathcodeSkus(prisma);

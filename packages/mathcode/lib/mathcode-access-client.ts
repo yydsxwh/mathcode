@@ -9,6 +9,9 @@ export type MathcodePayChannels = {
   wechat: boolean;
   alipay: boolean;
   mockOnly: boolean;
+  closed?: boolean;
+  unavailable?: boolean;
+  invalid?: boolean;
 };
 
 export type MathcodeAccessState = {
